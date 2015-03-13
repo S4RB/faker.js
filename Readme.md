@@ -180,6 +180,7 @@ Functions to generate information normally associated with commerce
 	console.log(faker.commerce.department(3, true));			// => OUTPUTS: Home, Garden & Outdoors
 	
 	console.log(faker.commerce.productName());					// => OUTPUTS: gorgeous metal bike
+	console.log(faker.commerce.productName({seed: 1234}));		// => ALWAYS OUTPUTS: Intelligent Concrete Mouse
 	
 	console.log(faker.commerce.price());						// => OUTPUTS: 149.99
 	console.log(faker.commerce.price(10, 20));					// => OUTPUTS: 15.50
@@ -347,22 +348,25 @@ Functions to generate dates
 
 Functions to provide random information based on passed in items.
 
-	console.log(faker.random.number());							// OUTPUTS: 1
-	console.log(faker.random.number(10));						// OUTPUTS: 8
-	console.log(faker.random.number({min: 5, max: 50}));		// OUTPUTS: 32
+	console.log(faker.random.number());								// OUTPUTS: 1
+	console.log(faker.random.number(10));							// OUTPUTS: 8
+	console.log(faker.random.number({min: 5, max: 50}));			// OUTPUTS: 32
+	console.log(faker.random.number({max: 100, seed: 1234}));		// ALWAYS OUTPUTS: 19
 
 	var array = [1, 2];
-	console.log(faker.random.array_element(array));				// OUTPUTS: 1
+	console.log(faker.random.array_element(array));					// OUTPUTS: 1
 	var array = ["item1", "item2", "item3", "item4"];
-	console.log(faker.random.array_element(array));				// OUTPUTS: item3
+	console.log(faker.random.array_element(array));					// OUTPUTS: item3
+	var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	console.log(faker.random.array_element(array, {seed: 1234}));	// ALWAYS OUTPUTS: 2
 	
 	var object = {
 		'name': 'john smith',
 		'age': 28,
 		'value': 1154
 	};
-	console.log(faker.random.object_element(object));			// OUTPUTS: john smith
-	console.log(faker.random.object_element(object, 'key'));	// OUTPUTS: name
+	console.log(faker.random.object_element(object));				// OUTPUTS: john smith
+	console.log(faker.random.object_element(object, 'key'));		// OUTPUTS: name
 
 
 ## faker.finance
