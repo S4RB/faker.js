@@ -36,8 +36,6 @@ describe("commerce.js", function() {
 
             var department = faker.commerce.department(5, true);
 
-            console.log(department);
-
             // account for the separator
             assert.strictEqual(department.split(" ").length, 6);
             // Sometimes it will generate duplicates that aren't used in the final string,
